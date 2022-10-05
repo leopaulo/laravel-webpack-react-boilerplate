@@ -71,10 +71,9 @@ Follow this instructions after forking the repo and when setting up the project 
     - Replace lwr texts with your own project name
     ```
 
--   lwrworkspace.code-workspace.example
+-   lwrworkspace.code-workspace
 
     ```
-    - Copy this file without '.example' in file name
     - Rename 'lwrworkspace' to preferred workpace name.
     ```
 
