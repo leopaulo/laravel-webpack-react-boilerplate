@@ -1,0 +1,23 @@
+@import 'frontend/assets/scss/_main';
+@import 'frontend/assets/scss/_colors';
+
+.langDropdown {
+	display: inline-block;
+
+	.langDropdownButton {
+		text-transform: none;
+		color: $colors_pText;
+
+		> span:first-child {
+			border-bottom: 1px solid rgba($colors_pText, 0.1);
+		}
+	}
+}
+
+.imageDropDown {
+	width: $main_fontSize + 4px;
+}
+
+.dropdownIcon {
+	min-width: $main_fontSize + 4px + $main_standardSpace;
+}

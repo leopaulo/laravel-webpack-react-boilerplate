@@ -1,0 +1,64 @@
+@import 'frontend/assets/scss/_main';
+@import 'frontend/assets/scss/_colors';
+
+@mixin helpers_vCenter($position: relative) {
+	position: $position;
+	top: 50%;
+	transform: translateY(-50%);
+	backface-visibility: hidden;
+}
+
+@mixin helpers_hCenter($position: relative) {
+	position: $position;
+	left: 50%;
+	transform: translateX(-50%);
+	backface-visibility: hidden;
+}
+
+@mixin helpers_clearfix() {
+	&::after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+}
+
+@mixin helpers_center($position: fixed) {
+	position: $position;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	backface-visibility: hidden;
+}
+
+@mixin helpers_childPosition($child_selector, $position: middle) {
+	text-align: center;
+	font-size: 0px;
+
+	&:before {
+		content: '';
+		height: 100%;
+		width: 1px;
+		display: inline-block;
+		vertical-align: $position;
+		margin-left: -1px;
+	}
+
+	#{$child_selector} {
+		max-width: 100%;
+		text-align: left;
+		display: inline-block;
+		vertical-align: $position;
+	}
+
+	> * {
+		font-size: $main_fontSize;
+	}
+}
+
+
+@mixin helpers_setTableColWidth($width) {
+	width: $width;
+	min-width: $width;
+	max-width: $width;
+}

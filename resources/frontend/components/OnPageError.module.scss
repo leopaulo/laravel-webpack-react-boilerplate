@@ -1,0 +1,72 @@
+@import 'frontend/assets/scss/_main';
+@import 'frontend/assets/scss/_helpers';
+@import 'frontend/assets/scss/_colors';
+
+.buttons {
+	margin-top: $main_standardSpace;
+	text-align: right;
+	width: 100%;
+
+	> * {
+		margin: 0px calc($main_standardSpace/2);
+		margin-top: $main_standardSpace;
+	}
+}
+
+.message {
+	width: 100%;
+}
+
+.parent {
+	@include colors_body_gradient;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 1301;
+}
+
+.container {
+	@include helpers_vCenter;
+}
+
+.refNo {
+	padding: $main_standardSpace 0px;
+	font-size: $main_fontSize - 2px;
+	opacity: 0.7;
+}
+
+.errorPage {
+	@include helpers_center(absolute);
+}
+
+.errorLight {
+	padding: $main_standardSpace * 3;
+	text-align: center;
+	font-size: $main_fontSize + 6px;
+}
+
+.errorLightIconContainer {
+	background: $colors_pText;
+	border-radius: $main_radius;
+	display: inline-block;
+	color: $colors_pLight;
+	padding: calc($main_standardSpace/2);
+	line-height: 0px;
+	margin-bottom: $main_standardSpace;
+
+	.errorLightIcon {
+		font-size: $main_fontSize * 3;
+	}
+}
+
+.errorLightIconContainer,
+.errorLightMessageContainer {
+	opacity: 0.3;
+}
+
+.errorLightButtonsContainer {
+	margin-top: $main_standardSpace;
+	text-align: center;
+}

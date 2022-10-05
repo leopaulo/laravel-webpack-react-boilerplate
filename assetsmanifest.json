@@ -1,0 +1,12 @@
+{
+  "main": {
+    "js": [
+      "/lwr/3.10.3/js/runtime.bundle.js",
+      "/lwr/3.10.3/js/vendors.bundle.js",
+      "/lwr/3.10.3/js/main.bundle.js"
+    ],
+    "css": [
+      "/lwr/3.10.3/css/main.css"
+    ]
+  }
+}
