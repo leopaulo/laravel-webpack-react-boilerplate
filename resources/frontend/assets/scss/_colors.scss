@@ -1,86 +1,117 @@
-$colors_primary: #ebecf0;
-$colors_pLight: #fdfdfd;
-$colors_pDark: #b9babe;
-$colors_pText: #3e4351;
+$colors_primary: #fafafa;
+$colors_pLight: #ffffff;
+$colors_pDark: #c7c7c7;
+$colors_pText: #1e1e1e;
 
-$colors_secondary: #14346d;
-$colors_sLight: #e0e9f8;
-$colors_sDark: #00154d;
-$colors_sText: rgb(201, 214, 248);
+$colors_secondary: #8fd36b;
+$colors_sLight: #c2ff9b;
+$colors_sDark: #5ea13d;
+$colors_sText: #fcfcfc;
+
+$colors_dmode_primary: #111827;
+$colors_dmode_pLight: #383e4f;
+$colors_dmode_pDark: #000000;
+$colors_dmode_pText: #fcfcfc;
+
+$colors_dmode_secondary: #8fd36b;
+$colors_dmode_sLight: #c2ff9b;
+$colors_dmode_sDark: #5ea13d;
+$colors_dmode_sText: #fcfcfc;
 
 $colors_link: lighten($colors_secondary, 10%);
 $colors_linkActive: lighten($colors_link, 20%);
-$colors_mainLayout_bg: darken($colors_sLight, 5%);
 
 $colors_error: #ff604f;
 $colors_errorText: #fff;
 $colors_success: rgb(4, 165, 111);
 
-$colors_newTagBg: #b90000;
-
-@mixin colors_error($opacity: 1) {
-	background-color: rgba($colors_error, $opacity);
+@mixin colors_error($variant: 'light') {
+	background-color: $colors_error;
 	color: $colors_errorText;
 }
 
-// mixins
-@mixin colors_primary($opacity: 1) {
-	background-color: rgba($colors_primary, $opacity);
-	color: $colors_pText;
+@function colors_primary($variant: 'light') {
+	@if ($variant== 'light') {
+		@return $colors_primary;
+	} @else {
+		@return $colors_dmode_primary;
+	}
 }
 
-@mixin colors_pLight($opacity: 1) {
-	background-color: rgba($colors_pLight, $opacity);
-	color: $colors_pText;
+@function colors_pLight($variant: 'light') {
+	@if ($variant== 'light') {
+		@return $colors_pLight;
+	} @else {
+		@return $colors_dmode_pLight;
+	}
 }
 
-@mixin colors_pDark($opacity: 1) {
-	background-color: rgba($colors_pDark, $opacity);
-	color: $colors_pText;
+@function colors_pText($variant: 'light') {
+	@if ($variant== 'light') {
+		@return $colors_pText;
+	} @else {
+		@return $colors_dmode_pText;
+	}
 }
 
-@mixin colors_secondary($opacity: 1) {
-	background-color: rgba($colors_secondary, $opacity);
-	color: $colors_sText;
+@function colors_pDark($variant: 'light') {
+	@if ($variant== 'light') {
+		@return $colors_pDark;
+	} @else {
+		@return $colors_dmode_pDark;
+	}
 }
 
-@mixin colors_sLight($opacity: 1) {
-	background-color: rgba($colors_sLight, $opacity);
-	color: $colors_sText;
+@function colors_secondary($variant: 'light') {
+	@if ($variant== 'light') {
+		@return $colors_secondary;
+	} @else {
+		@return $colors_dmode_secondary;
+	}
 }
 
-@mixin colors_sDark($opacity: 1) {
-	background-color: rgba($colors_sDark, $opacity);
-	color: $colors_sText;
+@function colors_sLight($variant: 'light') {
+	@if ($variant== 'light') {
+		@return $colors_sLight;
+	} @else {
+		@return $colors_dmode_sLight;
+	}
 }
 
-@mixin colors_body_gradient {
-	background: $colors_mainLayout_bg;
-	background: linear-gradient(
-		0deg,
-		rgba($colors_mainLayout_bg, 1) 20%,
-		rgba(lighten($colors_mainLayout_bg, 3%), 1) 65%,
-		rgba(lighten($colors_mainLayout_bg, 5%), 1) 100%
-	);
+@function colors_sText($variant: 'light') {
+	@if ($variant== 'light') {
+		@return $colors_sText;
+	} @else {
+		@return $colors_dmode_sText;
+	}
 }
 
-@mixin colors_footer_gradient {
-	background: rgb(2, 0, 36);
-	background: radial-gradient(
-		50% 100% at top,
-		rgba($colors_mainLayout_bg, 0) 0%,
-		rgba(lighten($colors_mainLayout_bg, 3%), 1) 0%,
-		rgba($colors_mainLayout_bg, 0) 100%
-	);
+@mixin colors_primary($variant: 'light') {
+	background-color: colors_primary($variant);
+	color: colors_pText($variant);
 }
 
-@mixin colors_fading_border {
-	background: $colors_secondary;
-	background: linear-gradient(
-		90deg,
-		rgba($colors_secondary, 0) 0%,
-		rgba($colors_secondary, 0.8) 25%,
-		rgba($colors_secondary, 0.8) 75%,
-		rgba($colors_secondary, 0) 100%
-	);
+@mixin colors_pLight($variant: 'light') {
+	background-color: colors_pLight($variant);
+	color: colors_pText($variant);
+}
+
+@mixin colors_pDark($variant: 'light') {
+	background-color: colors_pDark($variant);
+	color: colors_pText($variant);
+}
+
+@mixin colors_secondary($variant: 'light') {
+	background-color: colors_secondary($variant);
+	color: colors_sText($variant);
+}
+
+@mixin colors_sLight($variant: 'light') {
+	background-color: colors_sLight($variant);
+	color: colors_sText($variant);
+}
+
+@mixin colors_sDark($variant: 'light') {
+	background-color: colors_sDark($variant);
+	color: colors_sText($variant);
 }

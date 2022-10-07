@@ -5,14 +5,19 @@ html {
 	font-size: 10px;
 }
 
-html,
 body {
-	overflow-x: hidden;
-	
+	&.cas_light {
+		@include colors_primary();
+	}
+
+	&.cas_dark {
+		@include colors_primary('dark');
+	}
 }
 
 body,
 html {
+	overflow-x: hidden;
 	height: 100%;
 	width: 100%;
 }
@@ -80,5 +85,5 @@ body {
 }
 
 #root {
-	width: 100%;
+	display: inline;
 }
