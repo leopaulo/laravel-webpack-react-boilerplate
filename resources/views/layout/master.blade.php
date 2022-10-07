@@ -17,7 +17,7 @@
         <meta name='mobile-web-app-capable' content='yes'>
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>@yield('title', 'Welcome to SBOBET Casino')</title>
+        <title>@yield('title', 'Welcome')</title>
     
         <script>
             window.assetURL = "{{$assetService->getAssetUrl()}}";

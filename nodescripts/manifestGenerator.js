@@ -4,11 +4,11 @@ module.exports = (entrypoints, publicPath) => {
 	for (let name in entrypoints) {
 		groupedEntryPoints[name] = {
 			js: entrypoints[name]
-				.filter(file_name => file_name.endsWith('.js'))
-				.map(file_name => publicPath + file_name),
+				.filter((file_name) => !file_name.endsWith('hot-update.js') && file_name.endsWith('.js'))
+				.map((file_name) => publicPath + file_name),
 			css: entrypoints[name]
-				.filter(file_name => file_name.endsWith('.css'))
-				.map(file_name => publicPath + file_name)
+				.filter((file_name) => file_name.endsWith('.css'))
+				.map((file_name) => publicPath + file_name),
 		};
 	}
 

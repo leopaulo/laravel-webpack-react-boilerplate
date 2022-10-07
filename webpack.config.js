@@ -86,7 +86,7 @@ module.exports = (env, arg) => {
 							loader: 'css-loader',
 							options: {
 								modules: {
-									localIdentName: process.env.ASSET_IS_VERSIONED + `-[name]-[local]-[hash:base64:5]`,
+									localIdentName: `${process.env.APP_SHORT_NAME}-[name]-[local]-[hash:base64:5]`,
 								},
 								sourceMap: true,
 								importLoaders: 2,
