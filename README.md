@@ -58,6 +58,7 @@ Follow this instructions after forking the repo and when setting up the project 
 - ./docker/dev/shared/docker-compose.yaml
 
   ```
+  - Replace all 'lwr' text with your project own initials
   - You may add new service here that can be shared in all your projects master and branches
   ```
 
