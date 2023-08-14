@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import RouteWrap from './approute/RouteWrap';
+import RouteWrap from 'frontend/routewraps/RouteWrap';
 import withSuspense from 'frontend/utils/withSuspense';
 
 let MainLayout = withSuspense(
 	React.lazy(function () {
-		return import('./approute/MainLayout');
+		return import('frontend/routewraps/MainLayout');
 	})
 );
 
