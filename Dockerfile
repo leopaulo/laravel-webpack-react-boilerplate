@@ -47,6 +47,7 @@ RUN usermod -a -G root sail
 RUN userdel nginx
 RUN userdel application
 RUN sed -i -e "s/nginx;/sail;/" /opt/docker/etc/nginx/nginx.conf
+RUN chown sail:sail -R /var/lib/nginx
 
 # Copy entrypoint configs
 COPY ./docker/dev/supervisor-npm.conf /opt/docker/etc/supervisor.d/
