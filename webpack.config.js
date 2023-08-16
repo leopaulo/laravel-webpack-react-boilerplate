@@ -110,8 +110,59 @@ module.exports = (env, arg) => {
 					],
 				},
 				{
+					test: /\.lazy\.s(a|c)ss$/,
+					use: [
+						{
+							loader: 'style-loader',
+							options: { injectType: 'lazyStyleTag' },
+						},
+						{
+							loader: miniCssExtractPlugin.loader,
+							options: {
+								esModule: false,
+							},
+						},
+						{
+							loader: 'css-loader',
+						},
+						{
+							loader: 'postcss-loader',
+							options: {
+								sourceMap: true,
+								postcssOptions: {
+									plugins: [autoprefixer({})],
+								},
+							},
+						},
+						{
+							loader: 'sass-loader',
+							options: {
+								sourceMap: true,
+							},
+						},
+					],
+				},
+				{
+					test: /\.lazy\.css$/,
+					use: [
+						{
+							loader: 'style-loader',
+							options: { injectType: 'lazyStyleTag' },
+						},
+						{
+							loader: miniCssExtractPlugin.loader,
+							options: {
+								esModule: false,
+							},
+						},
+						{
+							loader: 'css-loader',
+						},
+					],
+				},
+				{
 					test: /\.s(a|c)ss$/,
-					exclude: /\.module\.s(a|c)ss$/,
+					exclude: /\.(module|lazy)\.s(a|c)ss$/,
 					use: [
 						{
 							loader: miniCssExtractPlugin.loader,
@@ -147,6 +198,7 @@ module.exports = (env, arg) => {
 				},
 				{
 					test: /\.css$/,
+					exclude: /\.lazy\.css$/,
 					use: [
 						{
 							loader: miniCssExtractPlugin.loader,
