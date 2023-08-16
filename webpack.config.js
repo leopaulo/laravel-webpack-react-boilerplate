@@ -117,12 +117,6 @@ module.exports = (env, arg) => {
 							options: { injectType: 'lazyStyleTag' },
 						},
 						{
-							loader: miniCssExtractPlugin.loader,
-							options: {
-								esModule: false,
-							},
-						},
-						{
 							loader: 'css-loader',
 						},
 						{
@@ -148,12 +142,6 @@ module.exports = (env, arg) => {
 						{
 							loader: 'style-loader',
 							options: { injectType: 'lazyStyleTag' },
-						},
-						{
-							loader: miniCssExtractPlugin.loader,
-							options: {
-								esModule: false,
-							},
 						},
 						{
 							loader: 'css-loader',
