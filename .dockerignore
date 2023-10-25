@@ -5,7 +5,8 @@ assetsmanifest.json
 .env.api
 .svn
 bootstrap/cache/**/*
-storage/app/**/*
+storage/app/public/*
+storage/app/private/*
 storage/clockwork/**/*
 storage/framework/cache/*
 storage/framework/sessions/*
@@ -15,7 +16,6 @@ jsconfig.json
 *.code-workspace
 *.md
 .env.example
-.env.api.example
 docker-compose.yml
 Jenkinsfile
 Dockerfile

@@ -64,7 +64,6 @@ FROM devdependencies as setup
 COPY package*.json *.config.js ./
 RUN npm config set fetch-retry-mintimeout 100000 && \
     npm config set fetch-retry-maxtimeout 100000 && \
-    npm config set registry http://nexus01.leekie.com:8081/repository/npm-proxy/ && \
     npm ci
 
 #----------------
@@ -83,6 +82,10 @@ RUN  mkdir -p /home/nginx/.composer
 # Install all composer packages for running test
 USER nginx
 COPY ./ ./
+USER root
+RUN chmod o+w ./storage/ -R
+RUN chmod o+w ./bootstrap/cache -R
+USER nginx
 RUN composer install
 USER root
 

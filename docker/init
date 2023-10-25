@@ -18,7 +18,7 @@ if [[ ! -d "./vendor" ]]; then
         -v $(pwd):/opt \
         -w /opt \
         laravelsail/php81-composer:latest \
-        composer install \
+        composer install --ignore-platform-reqs
     
     echo -e "\033[1;35m Composer package installed! \033[0m"
 fi
